@@ -1,6 +1,7 @@
 package com.leon.hello.nacos.consumer.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RequestMapping("/consumer")
 @RestController
+@RefreshScope
 public class ConsumerController {
     @GetMapping("/sayHello/{name}")
     public String sayHello(@PathVariable("name") String name) {

@@ -19,6 +19,7 @@
         <module>hello-nacos-consumer</module>
         <module>hello-nacos-provider</module>
         <module>hello-gateway</module>
+        <module>hello-nacos-gateway-dynamic-route</module>
     </modules>
     <packaging>pom</packaging>
     <description>nacos gateway 入门总工程</description>
@@ -76,6 +77,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
         <!--nacos 客户端 配置中心-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
@@ -88,20 +90,24 @@
             <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.redisson</groupId>
             <artifactId>redisson</artifactId>

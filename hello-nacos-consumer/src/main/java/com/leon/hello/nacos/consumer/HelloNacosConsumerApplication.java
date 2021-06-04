@@ -3,6 +3,7 @@ package com.leon.hello.nacos.consumer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @PROJECT_NAME: hello-nacos-gateway
@@ -13,6 +14,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
  * @DESCRIPTION:
  **/
 @Slf4j
+@EnableDiscoveryClient
 @SpringBootApplication
 public class HelloNacosConsumerApplication {
     public static void main(String[] args) {
