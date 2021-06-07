@@ -20,6 +20,7 @@
         <module>hello-nacos-provider</module>
         <module>hello-gateway</module>
         <module>hello-nacos-gateway-dynamic-route</module>
+        <module>nacos-config</module>
     </modules>
     <packaging>pom</packaging>
     <description>nacos gateway 入门总工程</description>
@@ -66,7 +67,7 @@
           </dependency>-->
 
         <!--nacos 客户端 注册中心-->
-        <dependency>
+       <!-- <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
             <version>${alibaba-cloud.version}</version>
@@ -76,10 +77,10 @@
                     <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
+        </dependency>-->
 
         <!--nacos 客户端 配置中心-->
-        <dependency>
+        <!--<dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
             <version>${alibaba-cloud.version}</version>
@@ -112,7 +113,7 @@
             <groupId>org.redisson</groupId>
             <artifactId>redisson</artifactId>
             <version>3.3.2</version>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
     <build>

@@ -25,7 +25,7 @@ public class DynamicRouteServiceImplByNacos {
     private DynamicRouteServiceImpl dynamicRouteService;
 
     public DynamicRouteServiceImplByNacos() {
-        dynamicRouteByNacosListener("gateway-router", "DEFAULT_GROUP");
+        dynamicRouteByNacosListener("sc-gateway", "DEFAULT_GROUP");
     }
 
     /**
@@ -38,14 +38,14 @@ public class DynamicRouteServiceImplByNacos {
         try {
             ConfigService configService = NacosFactory.createConfigService("127.0.0.1:8848");
             String content = configService.getConfig(dataId, group, 5000);
-            System.out.println(content);
+            System.err.println("初始化获取到路由信息为: " + content);
             configService.addListener(dataId, group, new Listener() {
                 @Override
                 public void receiveConfigInfo(String configInfo) {
                     RouteDefinition definition = JSON.parseObject(configInfo, RouteDefinition.class);
+                    System.err.println("获取到的最新路由配置为： " + definition);
                     dynamicRouteService.update(definition);
                 }
-
                 @Override
                 public Executor getExecutor() {
                     return null;
